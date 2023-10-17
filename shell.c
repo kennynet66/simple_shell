@@ -38,7 +38,7 @@ int main(void)
 
 		if (!strcmp(input, "exit"))
 		{
-			break;
+			exit(0);
 		}
 		my_pid = fork();
 
