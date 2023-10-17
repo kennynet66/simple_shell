@@ -22,7 +22,7 @@ void display_prompt(void)
 int main(void)
 {
 	char input[MAX_INPUT_SIZE];
-	pid_t pid;
+	pid_t my_pid;
 
 	while (1)
 	{
@@ -36,13 +36,17 @@ int main(void)
 
 		input[strcspn(input, "\n")] = '\0';
 
-		pid = fork();
-
-		if (pid == -1)
+		if (!strcmp(input, "exit"))
 		{
-			perror("Fork failed");
-			exit(EXIT_FAILURE);
-		} else if (pid == 0)
+			break;
+		}
+		my_pid = fork();
+
+		if (my_pid == -1)
+		{
+			perror("Error:");
+			return (1);
+		} else if (my_pid == 0)
 		{
 			execlp(input, input, (char *)NULL);
 
@@ -52,7 +56,7 @@ int main(void)
 		{
 			int status;
 
-			waitpid(pid, &status, 0);
+			waitpid(my_pid, &status, 0);
 		}
 	}
 
