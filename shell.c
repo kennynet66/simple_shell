@@ -9,15 +9,16 @@
 /**
  * display_prompt - display prompt
  * Return: void
- */
+*/
 void display_prompt(void)
 {
 	printf("#cisfun$ ");
 }
 /**
- * main - accepts commands
+ * main - accept commands
  * Return: void
- */
+*/
+
 int main(void)
 {
 	char input[MAX_INPUT_SIZE];
@@ -35,11 +36,6 @@ int main(void)
 
 		input[strcspn(input, "\n")] = '\0';
 
-		if (input[0] == '\0')
-		{
-			continue;
-		}
-
 		pid = fork();
 
 		if (pid == -1)
@@ -48,18 +44,15 @@ int main(void)
 			exit(EXIT_FAILURE);
 		} else if (pid == 0)
 		{
-			if (execlp(input, input, (char *)NULL) == -1) {
-				fprintf(stderr, "Command not found: %s\n", input);
-				exit(EXIT_FAILURE);
-			}
+			execlp(input, input, (char *)NULL);
+
+			fprintf(stderr, "Command not found: %s\n", input);
+			exit(EXIT_FAILURE);
 		} else
 		{
 			int status;
-			waitpid(pid, &status, 0);
 
-			if (WIFEXITED(status) && WEXITSTATUS(status) != 0) {
-				fprintf(stderr, "Error: The command did not exit successfully.\n");
-			}
+			waitpid(pid, &status, 0);
 		}
 	}
 
