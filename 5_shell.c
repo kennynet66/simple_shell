@@ -1,22 +1,22 @@
-#include "main.h"
+#include "kensa.h"
 /**
-* _calloc - allocate function
+* _callocs - allocate function
 * @argc: argument
 * @len: length
 * Return: zero
 */
-void *_calloc(unsigned int argc, unsigned int len)
+void *_callocs(unsigned int argc, unsigned int len)
 {
-unsigned int location = 0;
+unsigned int loc = 0;
 char *show = NULL;
 if (argc == 0 || len == 0)
 return (NULL);
 show = malloc(argc * len);
 if (show == NULL)
 return (NULL);
-for (; location < (argc * len); location++)
+for (; loc < (argc * len); loc++)
 {
-show[location] = 0;
+show[loc] = 0;
 }
 return (show);
 }

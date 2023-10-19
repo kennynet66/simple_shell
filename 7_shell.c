@@ -1,11 +1,11 @@
-#include "main.h"
+#include "kensa.h"
 /**
-* _strcmp - two strings check
+* _strncmp - two strings check
 * @elem1: first element
 * @elem2: second element
 * Return: true/false
 */
-int _strcmp(char *elem1, char *elem2)
+int _strncmp(char *elem1, char *elem2)
 {
 while (*elem1 && *elem2)
 {
@@ -19,21 +19,21 @@ elem2++;
 return (0);
 }
 /**
-* _strcpy - function to duplicate two strings
-* @location: pointer
+* _strncpy - function to duplicate two strings
+* @loc: pointer
 * @path: ponter
 * Return: @location
 */
-char *_strcpy(char *location, char *path)
+char *_strncpy(char *loc, char *path)
 {
-char *c = location;
+char *c = loc;
 while (*path != '\0')
 {
-*location = *path;
-location++;
+*loc = *path;
+loc++;
 path++;
 }
-*location = '\0';
+*loc = '\0';
 return (c);
 }
 /**
@@ -47,7 +47,7 @@ char **_split(char *str, char *sep)
 char *label, **split_str;
 int num = 0;
 label = strtok(str, sep);
-split_str = (char **)_calloc(100, sizeof(char *));
+split_str = (char **)_callocs(100, sizeof(char *));
 if (!split_str)
 {
 free(split_str);
@@ -63,22 +63,22 @@ return (split_str);
 }
 /**
 * _strncat - function that concatenates two strings
-* @location: string lctn
+* @loc: string lctn
 * @path: string source
 * Return: 0
 */
-char *_strncat(char *location, char *path)
+char *_strncat(char *loc, char *path)
 {
 int trev, val;
-for (trev = 0; location[trev] != '\0'; trev += 1)
+for (trev = 0; loc[trev] != '\0'; trev += 1)
 {}
 for (val = 0; path[val] != '\0'; val += 1)
 {
-location[trev] = path[val];
+loc[trev] = path[val];
 trev++;
 }
-location[trev] = '\0';
-return (location);
+loc[trev] = '\0';
+return (loc);
 }
 /**
 * _strnlen - size of string

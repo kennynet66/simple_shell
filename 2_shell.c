@@ -1,11 +1,11 @@
-#include "main.h"
+#include "kensa.h"
 
 /**
- * _getenv - receive environment var
+ * _getenviron - receive environment var
  * @elem: element
  * Return: 0
  */
-char *_getenv(char *elem)
+char *_getenviron(char *elem)
 {
 int num = 0, val;
 int result;
@@ -26,9 +26,9 @@ num++;
 return (&environ[num][val + 1]);
 }
 /**
- * _env - write environment var
+ * _environ - write environment var
 */
-void _env(void)
+void _environ(void)
 {
 int num = 0;
 while (environ[num])

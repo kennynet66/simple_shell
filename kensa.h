@@ -1,5 +1,5 @@
-#ifndef MAIN_H
-#define MAIN_H
+#ifndef KENSA_H
+#define KENSA_H
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -10,8 +10,8 @@
 
 
 extern char **environ;
-int _strcmp(char *s1, char *s2);
-char *_strcpy(char *dest, char *src);
+int _strncmp(char *s1, char *s2);
+char *_strncpy(char *dest, char *src);
 char *search_path(char *command);
 /* extern char **environ; */
 struct Point
@@ -28,10 +28,10 @@ char name[50];
 int citNo;
 float salary;
 } person1;
-char *_getenv(char *env_var);
-void *_calloc(unsigned int nmemb, unsigned int size);
-void _env(void);
-int execute(char **args);
+char *_getenviron(char *env_var);
+void *_callocs(unsigned int nmemb, unsigned int size);
+void _environ(void);
+int exect(char **args);
 struct shell_file
 {
 int id;

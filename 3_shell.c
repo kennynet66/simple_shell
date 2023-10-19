@@ -1,10 +1,10 @@
-#include "main.h"
+#include "kensa.h"
 /**
- * execute - implement path
+ * exect - implement path
  * @param: parameter
  * Return: 0
  */
-int execute(char **param)
+int exect(char **param)
 {
 int value = fork(), output;
 if (value == 0)
