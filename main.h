@@ -8,13 +8,6 @@
 #include <sys/wait.h>
 #include <sys/stat.h>
 
- #include "1_shell.c"
- #include "2_shell.c"
- #include "3_shell.c"
- #include "5_shell.c"
- #include "6_shell.c"
- #include "7_shell.c"
-
 
 
 int _strcmp(char *s1, char *s2);

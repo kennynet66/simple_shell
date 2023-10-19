@@ -6,6 +6,7 @@
  */
 int execute(char **param)
 {
+extern char **environ;
 int value = fork(), output;
 if (value == 0)
 {
