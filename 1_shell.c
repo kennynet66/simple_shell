@@ -1,4 +1,4 @@
-#include "kensa.h"
+#include "main.h"
 
 /**
  * empty_lin - emptiness

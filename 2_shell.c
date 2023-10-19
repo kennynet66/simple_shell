@@ -1,5 +1,6 @@
-#include "kensa.h"
+#include "main.h"
 
+extern char **environ;
 /**
  * _getenv - receive environment var
  * @elem: element

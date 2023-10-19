@@ -1,4 +1,4 @@
-#include "kensa.h"
+#include "main.h"
 /**
  * execute - implement path
  * @param: parameter

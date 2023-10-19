@@ -1,5 +1,5 @@
-#ifndef KENSA_H
-#define KENSA_H
+#ifndef MAIN_H
+#define MAIN_H
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -8,16 +8,26 @@
 #include <sys/wait.h>
 #include <sys/stat.h>
 
+ #include "1_shell.c"
+ #include "2_shell.c"
+ #include "3_shell.c"
+ #include "5_shell.c"
+ #include "6_shell.c"
+ #include "7_shell.c"
+
+
+
 int _strcmp(char *s1, char *s2);
 char *_strcpy(char *dest, char *src);
 char *search_path(char *command);
+/* extern char **environ; */
 struct Point
 {
 int x;
 int y;
 };
 char **_split(char *str, char *sep);
-char *_strcat(char *dest, char *src);
+char *_strncat(char *dest, char *src);
 int _strnlen(char *s);
 struct Person
 {
@@ -37,6 +47,5 @@ int ppid;
 };
 
 int empty_lin(char *buff);
-extern char **environ;
 
 #endif

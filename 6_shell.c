@@ -1,4 +1,4 @@
-#include "kensa.h"
+#include "main.h"
 /**
 * search_path - show file source
 * @elem: element

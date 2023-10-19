@@ -1,4 +1,4 @@
-#include "kensa.h"
+#include "main.h"
 /**
 * _calloc - allocate function
 * @argc: argument

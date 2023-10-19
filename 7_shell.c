@@ -1,4 +1,4 @@
-#include "kensa.h"
+#include "main.h"
 /**
 * _strcmp - two strings check
 * @elem1: first element
