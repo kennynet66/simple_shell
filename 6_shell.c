@@ -1,41 +1,41 @@
 #include "kensa.h"
 /**
-* search_path - show file source
+* search_path - show file src
 * @elem: element
-* Return: cmd source
+* Return: cmd src
 */
 char *search_path(char *elem)
 {
-char *source = _getenviron("PATH"), *source_dup;
-char **source_div;
-char *source_add = NULL;
-int i = 0, source_size = 0;
+char *src = _getenviron("PATH"), *src_dup;
+char **src_div;
+char *src_add = NULL;
+int i = 0, src_size = 0;
 struct stat info;
 if (stat(elem, &info) == 0)
 {
 return (elem);
 }
-source_dup = malloc(_strnlen(source) + 1);
-source_dup = _strncpy(source_dup, source);
-source_div = _split(source_dup, ":");
-while (source_div[i])
+src_dup = malloc(_strnlen(src) + 1);
+src_dup = _strncpy(src_dup, src);
+src_div = _split(src_dup, ":");
+while (src_div[i])
 {
-source_size = _strnlen(source_div[i]);
-if (source_div[i][source_size - 1] != '/')
+src_size = _strnlen(src_div[i]);
+if (src_div[i][src_size - 1] != '/')
 {
-source_add = _strncat(source_div[i], "/");
+src_add = _strncat(src_div[i], "/");
 }
-source_add = _strncat(source_div[i], elem);
-if (stat(source_add, &info) == 0)
+src_add = _strncat(src_div[i], elem);
+if (stat(src_add, &info) == 0)
 break;
 i++;
 }
-free(source_dup);
-if (!source_div[i])
+free(src_dup);
+if (!src_div[i])
 {
-free(source_div);
+free(src_div);
 return (NULL);
 }
-free(source_div);
-return (source_add);
+free(src_div);
+return (src_add);
 }
